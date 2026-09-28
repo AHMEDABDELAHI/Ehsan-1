@@ -1,6 +1,0 @@
-E:\my Projects\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
-E:\my Projects\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
-E:\my Projects\Ehsan\Ehsan\x64\Debug\Ehsan.HomeForm.resources
-C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
-C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan\Ehsan\x64\Debug\Ehsan.HomeForm.resources
-C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
