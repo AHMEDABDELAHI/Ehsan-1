@@ -30,12 +30,12 @@ assert openpyxl.load_workbook(io.BytesIO(stream.getvalue())).active['B2'].value=
 cw=python_calamine.CalamineWorkbook.from_filelike(io.BytesIO(stream.getvalue()));assert cw.get_sheet_by_index(0).to_python()[1][1]==125
 result['checks'].append('XLSX two readers')
 with sync_playwright() as p:
- b=p.chromium.launch(headless=True);c=b.new_context();c.route('**/*',lambda r:r.abort());page=c.new_page();page.set_content('<html lang="ar" dir="rtl"><meta charset="utf-8"><h1>اختبار طباعة محلي</h1><table><tr><td>المبلغ</td><td>125.00</td></tr></table></html>');pdf=page.pdf();assert pdf.startswith(b'%PDF-') and len(pdf)>1000;b.close()
+ b=p.chromium.launch(executable_path=p.chromium.executable_path,headless=True);c=b.new_context();c.route('**/*',lambda r:r.abort());page=c.new_page();page.set_content('<html lang="ar" dir="rtl"><meta charset="utf-8"><h1>اختبار طباعة محلي</h1><table><tr><td>المبلغ</td><td>125.00</td></tr></table></html>');pdf=page.pdf();assert pdf.startswith(b'%PDF-') and len(pdf)>1000;b.close()
 result['checks'].append('Bundled Chromium PDF with all page network requests blocked')
 result['versions']={x:version(x) for x in ['fastapi','uvicorn','python-multipart','openpyxl','defusedxml','httpx','playwright','python-calamine','pydantic','starlette']}
 result['limitations']=['Dependency smoke test on Windows Server 2022 runner, not complete AquaFin app UAT or father device.','OS network not disabled; application page routes blocked in PDF smoke.']
 (root/'runtime_native_smoke.json').write_text(json.dumps(result,indent=2,ensure_ascii=False),encoding='utf-8')
-print(json.dumps(result,ensure_ascii=False))
+print(json.dumps(result,ensure_ascii=True))
 '''
 pathlib.Path('runtime_smoke.py').write_text(smoke,encoding='utf-8')
 subprocess.run([exe,str(pathlib.Path('runtime_smoke.py').resolve()),str(R)],env=env,check=True)
